@@ -8,17 +8,36 @@
     <div data-role="page">
  
         <div data-role="header">
-            <h1>My Title</h1>
+            <h1>Perspective</h1>
         </div><!-- /header -->
  
         <div data-role="content">
-            <p>Hello world</p>
+            <form>
+						    <input type="button" data-shadow="false" value="Hong Kong Protests">
+								<input type="button" data-shadow="false" value="Ebola Epidemic">
+								<input type="button" data-shadow="false" value="Ukraine Crisis">
+								<input type="button" data-shadow="false" value="Apple v. Samsung">
+						</form>
         </div><!-- /content -->
  
-        <div data-role="footer">
-            <h4>My Footer</h4>
-        </div><!-- /footer -->
- 
+		    <div data-role="footer">
+		        <div data-role="navbar">
+		            <ul>
+		                <li><a href="#" data-icon="grid" class="ui-btn-active">News</a></li>
+		                <li><a href="#" data-icon="star">Sports</a></li>
+		                <li><a href="#" data-icon="gear">Finance</a></li>
+		            </ul>
+		        </div><!-- /navbar -->
+				</div><!-- /footer -->
+
     </div><!-- /page -->
 </body>
+<script>
+$( document ).delegate("#aboutPage", "pagecreate", function() {
+  alert('A page with an ID of "aboutPage" was just created by jQuery Mobile!');
+});
+//transition to the "about us" page with a slideup transition 			
+$.mobile.changePage( "#aboutPage", { transition: "slideup"} );	
+
+</script>
 </html>
