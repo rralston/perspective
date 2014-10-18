@@ -13,6 +13,9 @@
         </div><!-- /header -->
  
         <div data-role="content">
+             <% results = AlchemyAPI::KeywordExtraction.new.search(url: 'http://www.washingtonpost.com/blogs/capital-weather-gang/wp/2013/08/14/d-c-area-forecast-ultra-nice-weather-dominates-next-few-days/') %>
+            <%# results = AlchemyAPI.search(:keyword_extraction, text: "hello world") %>
+            <%= results.inspect %>
             <h1>Please Select a Category</h1>
 						<form>
 						    <a href="../news"><input type="button" data-shadow="false" value="Current Events"></a>
