@@ -1,10 +1,22 @@
-#Dev postgres credentials
-development:
+default: &default
   adapter: postgresql
   encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  
+  #Dev postgres credentials
+development:
+  <<: *default
   database: perspective
   username: postgres
-  password: nimbu
+  password: 
   host: localhost
   port: 5432
+
+  #Production postgres credentials
+production:
+  <<: *default
+  database: perspective_production
+  username: postgres
+  password: <%= ENV['PERSPECTIVE_DATABASE_PASSWORD'] %>
