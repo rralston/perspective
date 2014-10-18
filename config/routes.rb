@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'news/index'
+  get '/news', to: 'news#index'
+
   get 'sports/index'
   get '/sports', to: 'sports#index'
   # The priority is based upon order of creation: first created -> highest priority.
