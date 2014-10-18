@@ -19,4 +19,6 @@ production:
   <<: *default
   database: perspective_production
   username: postgres
-  password: <%= ENV['PERSPECTIVE_DATABASE_PASSWORD'] %>
+  password: nimbu #<%= ENV['PERSPECTIVE_DATABASE_PASSWORD'] %>
+  host: localhost
+  port: 5432
