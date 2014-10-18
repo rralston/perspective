@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'finance/index'
+  get '/finance', to: 'finance#index'
+
   get 'news/index'
   get '/news', to: 'news#index'
 
