@@ -24,7 +24,7 @@
 		        <div data-role="navbar">
 		            <ul>
 		                <li><a href="#" data-icon="grid" class="ui-btn-active">News</a></li>
-		                <li><a href="#" data-icon="star">Sports</a></li>
+		                <li><a href="../sports" data-icon="star">Sports</a></li>
 		                <li><a href="#" data-icon="gear">Finance</a></li>
 		            </ul>
 		        </div><!-- /navbar -->
@@ -32,12 +32,4 @@
 
     </div><!-- /page -->
 </body>
-<script>
-$( document ).delegate("#aboutPage", "pagecreate", function() {
-  alert('A page with an ID of "aboutPage" was just created by jQuery Mobile!');
-});
-//transition to the "about us" page with a slideup transition 			
-$.mobile.changePage( "#aboutPage", { transition: "slideup"} );	
-
-</script>
 </html>
