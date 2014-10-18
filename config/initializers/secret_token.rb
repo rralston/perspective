@@ -1,0 +1,1 @@
+Perspective::Application.config.secret_token = '887ca0e5c8826f6189ce3486f0de33e7a36bdcce6a70fea6c81455163bc5b1dc5c818c539cf0f35a22a208c74f48abee1917d019fef67074d21be875dbd2b1b6'
