@@ -13,12 +13,14 @@
         </div><!-- /header -->
  
         <div data-role="content">
-            <%= form_tag "/news/countries", :method => :post do %>
-                <%= submit_tag "Hong Kong Protests", "data-shadow" => "false" %>
-                <%= submit_tag "Ebola Epidemic", "data-shadow" => "false" %>
-                <%= submit_tag "Ukraine Crisis", "data-shadow" => "false" %>
-                <%= submit_tag "Apple v. Samsung", "data-shadow" => "false" %>
-						<% end %>
+            <!--form action="/news/articles">
+                <%#= submit_tag "China", "data-shadow" => "false" %>
+                <%#= submit_tag "Hong Kong", "data-shadow" => "false" %>
+						</form-->
+						<ul data-role="listview" data-inset="true">
+                <li><a href="/news/articles?loc=888&q=<%= @topic %>"><span><%= image_tag("China-Flag-icon.png") %>China</span></a></li>
+                <li><a href="/news/articles?loc=889&q=<%= @topic %>"><span><%= image_tag("Hong-Kong-Flag-icon.png") %>Hong Kong</span></a></li>
+            </ul>
         </div><!-- /content -->
  
 		    <div data-role="footer" data-position="fixed">

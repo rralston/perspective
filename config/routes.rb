@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'news/index'
   get '/news', to: 'news#index'
+  match '/news/countries', to: 'news#countries', via: [:get, :post]
+  match '/news/articles', to: 'news#articles', via: [:get, :post]
 
   get 'sports/index'
   get '/sports', to: 'sports#index'

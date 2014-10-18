@@ -10,7 +10,7 @@ development:
   <<: *default
   database: perspective
   username: postgres
-  password: 
+  password: nimbu
   host: localhost
   port: 5432
 

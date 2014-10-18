@@ -1,30 +1,33 @@
 <!doctype html>
 <html>
 <head>
-    <title>Perspective</title>
+    <title>Perspective | News</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <div data-role="page">
  
         <div data-role="header">
-            <a href="../../" data-icon="home">Home</a>
-						<h1>Perspective</h1>
+	        	<a href="../../" data-icon="home">Home</a>
+            <h1>News</h1>
         </div><!-- /header -->
  
         <div data-role="content">
-            <h1>Please Select a Category</h1>
-						<form>
-						    <a href="../news"><input type="button" data-shadow="false" value="Current Events"></a>
-								<a href="../sports"><input type="button" data-shadow="false" value="Sports"></a>
-								<a href="../finance"><input type="button" data-shadow="false" value="Finance"></a>
-						</form>
+            <!--form action="/news/articles">
+                <%#= submit_tag "China", "data-shadow" => "false" %>
+                <%#= submit_tag "Hong Kong", "data-shadow" => "false" %>
+						</form-->
+						<ul data-role="listview" data-inset="true">
+						   <% @articles.each do |item| %>
+                <li><a href="/news"><%= item["summary"].truncate(100) %></a></li>
+               <% end %> 
+            </ul>
         </div><!-- /content -->
  
 		    <div data-role="footer" data-position="fixed">
 		        <div data-role="navbar">
 		            <ul>
-		                <li><a href="../news" data-icon="search">News</a></li>
+		                <li><a href="../news" data-icon="search" class="ui-btn-active">News</a></li>
 		                <li><a href="../sports" data-icon="star">Sports</a></li>
 		                <li><a href="../finance" data-icon="check">Finance</a></li>
 		            </ul>
