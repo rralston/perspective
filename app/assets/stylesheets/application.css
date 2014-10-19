@@ -14,3 +14,4 @@
  *= require jquery.mobile-1.4.4
  *= require_self
  */
+span.flag img {margin-right: 5px;width:15px}

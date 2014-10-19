@@ -23,7 +23,7 @@
                 <li>
                   <% sentiment = sentiment_analysis(item['url']).values %>
                   <% str = [item['title'].truncate(100), sentiment.first].join(" <> ") %>
-                  <a href="/news/analysis?src=<%= item['url'].try(:split, '&format').try(:first) %>">
+                  <a href="/news/analysis?src=<%= item['url'].try(:split, '&format').try(:first) %>" style="<%= sentiment.first == 'negative' ? 'color:red;' : (sentiment.first == 'neutral' ? 'color:orange;' : (sentiment.first == 'positive' ? 'color:green' : '')) %>">
                     <%= item['title'].truncate(100) %>
                     &nbsp;<>&nbsp;
                     <span style="<%= sentiment.first == 'negative' ? 'color:red;' : (sentiment.first == 'neutral' ? 'color:orange;' : (sentiment.first == 'positive' ? 'color:green' : '')) %>"><%= sentiment.first %></span>

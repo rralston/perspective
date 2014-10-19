@@ -29,7 +29,7 @@ gem 'spring',        group: :development
 
 gem 'alchemy-api-rb', :require => 'alchemy_api'
 gem 'httparty'
-gem 'nokogiri'
+gem 'nokogiri', '~> 1.6.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

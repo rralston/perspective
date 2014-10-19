@@ -9,7 +9,7 @@
  
         <div data-role="header">
 	        	<a href="../../" data-icon="home">Home</a>
-            <h1>Countries</h1>
+            <h1>Select Country</h1>
         </div><!-- /header -->
  
         <div data-role="content">
@@ -18,8 +18,12 @@
                 <%#= submit_tag "Hong Kong", "data-shadow" => "false" %>
 						</form-->
 						<ul data-role="listview" data-inset="true">
-                <li><a href="/news/articles?loc=888&q=<%= @topic %>"><span><%= image_tag("China-Flag-icon.png") %>China</span></a></li>
-                <li><a href="/news/articles?loc=889&q=<%= @topic %>"><span><%= image_tag("Hong-Kong-Flag-icon.png") %>Hong Kong</span></a></li>
+                <li><a href="/news/articles?loc=888&q=<%= @topic %>"><span class="flag"><%= image_tag("China-Flag-icon.png") %>China</span></a></li>
+                <li><a href="/news/articles?loc=889&q=<%= @topic %>"><span class="flag"><%= image_tag("Hong-Kong-Flag-icon.png") %>Hong Kong</span></a></li>
+								<li><a href="/news/articles?loc=974&q=<%= @topic %>"><span class="flag"><%= image_tag("gb.png") %>United Kingdom</span></a></li>
+								<li><a href="/news/articles?loc=1750&q=<%= @topic %>"><span class="flag"><%= image_tag("us.png") %>United States</span></a></li>
+								<li><a href="/news/articles?loc=951&q=<%= @topic %>"><span class="flag"><%= image_tag("gf.png") %>France</span></a></li>
+								<li><a href="/news/articles?loc=952&q=<%= @topic %>"><span class="flag"><%= image_tag("de.png") %>Germany</span></a></li>
             </ul>
         </div><!-- /content -->
  
