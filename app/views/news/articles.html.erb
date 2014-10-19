@@ -18,14 +18,21 @@
                 <%#= submit_tag "Hong Kong", "data-shadow" => "false" %>
 						</form-->
 						<ul data-role="listview" data-inset="true">
-						  <%= form_tag "/news/analysis", :method => "post" do %>
+						  <%#= form_tag "/news/analysis", :method => "post" do %>
 						   <% @articles.each do |item| %>
                 <li>
-                <%= hidden_field_tag "src", item['url'] %>
-                <%= submit_tag item['title'].truncate(100), :name => "but", :style => "text-align:left;"  %>
-                  </li>
+                  <% sentiment = sentiment_analysis(item['url']).values %>
+                  <% str = [item['title'].truncate(100), sentiment.first].join(" <> ") %>
+                  <a href="/news/analysis?src=<%= item['url'].try(:split, '&format').try(:first) %>">
+                    <%= item['title'].truncate(100) %>
+                    &nbsp;<>&nbsp;
+                    <span style="<%= sentiment.first == 'negative' ? 'color:red;' : (sentiment.first == 'neutral' ? 'color:orange;' : (sentiment.first == 'positive' ? 'color:green' : '')) %>"><%= sentiment.first %></span>
+                  </a>
+                  <%#= hidden_field_tag "src", item['url'] %>
+                  <%#= submit_tag str, :name => "but", :style => "text-align:left;"  %>
+                 </li>
                <% end %> 
-              <% end %>  
+              <%# end %>  
             </ul>
         </div><!-- /content -->
  

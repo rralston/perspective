@@ -6,16 +6,16 @@
 </head>
 <body>
     <div data-role="page">
- 
+
         <div data-role="header">
 	        	<a href="../../" data-icon="home">Home</a>
             <h1>Analysis</h1>
         </div><!-- /header -->
-			
+
 				<form>
 			    <a href="../news"><input type="button" data-shadow="false" value="<%= @title %>"></a>
-			  </form>  
- 
+			  </form>
+
         <div data-role="content">
             <!--form action="/news/articles">
                 <%#= submit_tag "China", "data-shadow" => "false" %>
@@ -27,8 +27,22 @@
                  <div class="ui-block-a"><div class="ui-bar ui-bar-a" style=""><%= @results['type'] %></div></div>
                 <div class="ui-block-b"><div class="ui-bar ui-bar-a" style=""><%= @results['score'] %></div></div>
             </div>
+            <br />
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="">Keyword Sentiment: China</div></div>
+                <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="">Keyword Score: China</div></div>
+                 <div class="ui-block-a"><div class="ui-bar ui-bar-a" style=""><%= @china_sentiment.blank? ? '-' : @china_sentiment %></div></div>
+                <div class="ui-block-b"><div class="ui-bar ui-bar-a" style=""><%= @china_score.blank? ? '-' : @china_sentiment %></div></div>
+            </div>
+            <br />
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="">Keyword Sentiment: Hong Kong</div></div>
+                <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="">Keyword Score: Hong Kong</div></div>
+                 <div class="ui-block-a"><div class="ui-bar ui-bar-a" style=""><%= @hk_sentiment.blank? ? '-' : @hk_sentiment %></div></div>
+                <div class="ui-block-b"><div class="ui-bar ui-bar-a" style=""><%= @hk_score.blank? ? '-' : @hk_score %></div></div>
+            </div>
         </div><!-- /content -->
- 
+
 		    <div data-role="footer" data-position="fixed">
 		        <div data-role="navbar">
 		            <ul>
