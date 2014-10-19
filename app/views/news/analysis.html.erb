@@ -9,24 +9,24 @@
  
         <div data-role="header">
 	        	<a href="../../" data-icon="home">Home</a>
-            <h1>Articles</h1>
+            <h1>Analysis</h1>
         </div><!-- /header -->
+			
+				<form>
+			    <a href="../news"><input type="button" data-shadow="false" value="<%= @title %>"></a>
+			  </form>  
  
         <div data-role="content">
             <!--form action="/news/articles">
                 <%#= submit_tag "China", "data-shadow" => "false" %>
                 <%#= submit_tag "Hong Kong", "data-shadow" => "false" %>
 						</form-->
-						<ul data-role="listview" data-inset="true">
-						  <%= form_tag "/news/analysis", :method => "post" do %>
-						   <% @articles.each do |item| %>
-                <li>
-                <%= hidden_field_tag "src", item['url'] %>
-                <%= submit_tag item['title'].truncate(100), :name => "but", :style => "text-align:left;"  %>
-                  </li>
-               <% end %> 
-              <% end %>  
-            </ul>
+						<div class="ui-grid-a">
+                <div class="ui-block-a"><div class="ui-bar ui-bar-a" style="">Document Sentiment</div></div>
+                <div class="ui-block-b"><div class="ui-bar ui-bar-a" style="">Score</div></div>
+                 <div class="ui-block-a"><div class="ui-bar ui-bar-a" style=""><%= @results['type'] %></div></div>
+                <div class="ui-block-b"><div class="ui-bar ui-bar-a" style=""><%= @results['score'] %></div></div>
+            </div>
         </div><!-- /content -->
  
 		    <div data-role="footer" data-position="fixed">

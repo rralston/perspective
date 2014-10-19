@@ -14,6 +14,21 @@ class NewsController < ApplicationController
     @articles = list["articles"]
   end
   
+  def analysis
+    if params[:src].blank?
+     redirect_to :back
+    else
+     @src = params[:src].gsub(' ', '+')
+     puts @src.inspect
+     #results = AlchemyAPI::KeywordExtraction.new.search(url: 'http://www.washingtonpost.com/blogs/capital-weather-gang/wp/2013/08/14/d-c-area-forecast-ultra-nice-weather-dominates-next-few-days/')
+     @results = AlchemyAPI::SentimentAnalysis.new.search(url: @src)
+     puts @results.inspect
+     title = AlchemyAPI::TitleExtraction.new.search(url: @src)
+     @title = title.try(:split, " | ").try(:last)
+    end 
+  end
+  
+  
   def all_articles(country, query)
     # http://api.feedzilla.com/v1/categories/19/subcategories/888/articles/search.json?q=Hong+Kong+Protest
     uri = URI.parse("http://api.feedzilla.com/v1/categories/19/subcategories/"+ country +"/articles/search.json?q="+ query.gsub(' ', '+') +"")
